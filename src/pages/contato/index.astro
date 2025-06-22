@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets"
+import LayoutContato from "../../layouts/LayoutContato.astro"
+import { fade } from 'astro:transitions'
+import EmailLogo from '../../imagens/email-svgrepo-com.svg'
+import WhatsappLogo from '../../imagens/whatsapp-svgrepo-com.svg'
+import GithubLogo from '../../imagens/github-142-svgrepo-com.svg'
+---
+
+<LayoutContato titulo="Contato">
+    <div class="texto-principal" transition:name="contato" transition:animate={fade({ duration: '0.1s' })}>
+        Meus contatos
+    </div>
+
+    <div class="contatos">
+        <div class="contato">
+            <a href="mailto:carlosjuyt@gmail.com">
+                <Image src={EmailLogo} alt="adc" width=40 height=20 />
+            </a>
+            <a href="https://api.whatsapp.com/send/?phone=%2B5521993895595&text&type=phone_number&app_absent=0">
+                <Image src={WhatsappLogo} alt="ca" width=40 height=20 />
+            </a>
+            <a href="https://github.com/usoguio">
+                <Image src={GithubLogo} alt="dc" width=40 height=20 />
+            </a>
+        </div>
+    </div>
+
+</LayoutContato>
+
+<style>
+    .texto-principal {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+        font-size: 26px;
+    }
+
+    .contato {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        font-size: 26px;
+        gap: 20px;
+    }
+
+
+</style>

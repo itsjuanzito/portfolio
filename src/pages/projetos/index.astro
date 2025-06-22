@@ -1,0 +1,84 @@
+---
+import LayoutProjetos from "../../layouts/LayoutProjetos.astro";
+import { Image } from "astro:assets";
+import ImagemPortfolio from '../../imagens/portfolio.png'
+import ImagemWeb from '../../imagens/web-svgrepo-com.svg'
+---
+
+<LayoutProjetos titulo="Projetos">
+    <div class="texto-principal" transition:name="projetos">Meus Projetos</div>
+
+    <div class="todos-projetos">
+        <div class="projeto">
+            <Image loading="eager" src={ImagemPortfolio} alt="portfolio"  />
+
+            <a href="#">
+                <Image loading="eager" class="github-logo" src="https://cdn-icons-png.flaticon.com/256/25/25231.png" alt="logo do github" width=40 height=20 />
+            </a>
+
+            <a href="#">
+                <Image loading="eager" class="web-logo" src={ImagemWeb} alt="logo da web" width=50 height=30 />
+            </a>
+
+            <p class="textos-projeto">
+                Meu portfolio atual.
+            </p>
+        </div>
+    
+        <div class="projeto">
+            <p>
+                Projeto 2
+            </p>
+        </div>
+    
+        <div class="projeto">
+            <p>
+                Projeto 3
+            </p>
+        </div>
+    </div>
+</LayoutProjetos>
+
+<style>
+    .texto-principal {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+        font-size: 26px;
+    }
+
+    .todos-projetos {
+        display: flex;
+        justify-content: center;
+        gap: 30px; 
+        margin-top: 40px;
+    }
+
+    .projeto {
+       position: relative;
+       background-color: #15161a;
+       border: 1px solid #444;
+       border-radius: 10px;
+       width: 300px; 
+       text-align: center;
+       overflow: hidden;
+    }
+
+    .textos-projeto {
+        padding: 10px;
+    }
+
+    .github-logo {
+        position: absolute;
+        left:5px;
+        top: 110px;
+        border-radius: 50%;
+    }
+
+    .web-logo {
+        position: absolute;
+        left: 252px;
+        top: 107px;
+        border-radius: 50%;
+    }
+</style>
